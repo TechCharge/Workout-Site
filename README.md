@@ -1,3 +1,3 @@
 # Workout-Site
 
-This site will provide a useful timer application that can produce sounds on set intervals without stopping the countdown, and in the future I hope to add a section for creating exercise routines that collaborates with the timer.
+Ever since I began working out I noticed that while interval timers and workout applications exist, they didn't fully meet the needs that I desired.  Because of that I am creating this site which will provide a useful timer application that can produce sounds on set intervals without stopping the countdown, and in the future I hope to add a section for creating exercise routines that collaborates with the timer.
