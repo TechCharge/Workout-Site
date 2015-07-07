@@ -38,7 +38,10 @@
             </div>
 					</div>
 				</div>
+				<button class="btn btn-success" ng-click="startTimer()" ng-disabled="timerRunning">Start Timer</button>
+        <button class="btn btn-danger" ng-click="stopTimer()" ng-disabled="!timerRunning">Stop Timer</button>
 			</form>
+			<h1>Countdown: <timer countdown="120" max-time-unit="'minute'" interval="1000">{{mminutes}} minute{{minutesS}}:{{sseconds}} second{{secondsS}}</timer></h1>
 		</div>
 
 
