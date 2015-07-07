@@ -17,25 +17,24 @@
     <script type="text/javascript" src="scripts/app.js"></script>
   </head>
 
-	<body>
+	<body ng-app="MyApp">
 
-	<!--Note: Consider overlaying all of the forms on top of a jumbotron-->
+	<!--Note: Consider overlaying the form on top of a jumbotron-->
 	<!-- Wrap everything inside of the form tags -->
 	<!-- Give all input elements .form-control -->
 
-	<!--Input field for number of minutes-->
-		<div class="container">
-			<div class="row">
-			  <form role="form" action="#" role="form">
-			    <div class="form-group">
-			    	<div class="col-xs-4">
-				      <label for="minutes">Minutes:</label>
-				      <input type="number" class="form-control" id="minutes" placeholder="Number of minutes">
-				      <!-- <button type="submit" class="btn btn-default" style="margin-top:10px">Begin!</button> -->
-				    </div>
-			    </div>
-			  </form>
-		  </div>
+		<div class="container" ng-controller="MyAppController">
+  	<h1 class="page-header">Workout Timer</h1>
+    	<form role="form" action="#">
+      	<div class="row">
+        	<div class="form-group">
+        		<div class="col-xs-6 col-sm-4">
+            	<label for="minutes">Minutes:</label>
+            	<input type="number" class="form-control" id="minutes" placeholder="Number of minutes">
+          	</div>
+					</div>
+				</div>
+			</form>
 		</div>
 
 
