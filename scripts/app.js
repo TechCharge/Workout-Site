@@ -1,18 +1,30 @@
-angular.module('MyApp', ['timer'])
-  .controller('MyAppController', ['$scope', function ($scope) {
-      $scope.timerRunning = true;
+var myApp = angular.module('myApp',['timer']);
 
-      $scope.startTimer = function (){
-          $scope.$broadcast('timer-start');
-          $scope.timerRunning = true;
-      };
+myApp.controller('myCtrl', function($scope,$timeout){
+  $scope.timerRunning = false;
+  $scope.minutesEntered = null;
+  $scope.secondsEntered = null;
+  $scope.countdown = 0;
+  
+  $scope.startTimer = function (){
+    $scope.countdown = ($scope.minutesEntered * 60) + $scope.secondsEntered;
+    $timeout(function(){
+       $scope.$broadcast('timer-start');
+    });
+    $scope.timerRunning = true;
+  };
 
-      $scope.stopTimer = function (){
-          $scope.$broadcast('timer-stop');
-          $scope.timerRunning = false;
-      };
+  $scope.stopTimer = function (){
+      $scope.$broadcast('timer-stop');
+      $scope.timerRunning = false;
+  };
 
-      $scope.$on('timer-stopped', function (event, args) {
-          console.log('timer-stopped args = ', args);
-      });
-  }]);
+  $scope.setCountdown = function(newVal) {
+    // $scope.countdown = newVal;
+     $scope.countdown = $scope.minutesEntered + $scope.secondsEntered;
+    $timeout(function(){
+       $scope.$broadcast('timer-start');
+    });
+  };
+
+});
