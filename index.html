@@ -36,8 +36,6 @@
         </form>
 
         <button class="btn btn-success" ng-click="startTimer()" ng-disabled="timerRunning">Start Timer</button>
-        <!--TODO: Make it so that start is disabled until a number is entered-->
-        <!--TODO: Have Start not apply the values of the minutes and seconds fields every time it's clicked -->
         <button class="btn btn-danger" ng-click="stopTimer()" ng-disabled="!timerRunning">Stop Timer</button>
 
         <h1><timer interval="1000" countdown="countdown" max-time-unit="'minute'" autostart="false">{{mminutes}}:{{sseconds}}</timer></h1>

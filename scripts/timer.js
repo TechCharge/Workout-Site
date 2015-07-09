@@ -15,7 +15,11 @@ angular.module('timer', [])
         startTimeAttr: '=startTime',
         endTimeAttr: '=endTime',
         countdownattr: '=countdown',
-        autoStart: '&autoStart'
+        finishCallback: '&finishCallback',
+        autoStart: '&autoStart',
+        language: '@?',
+        fallback: '@?',
+        maxTimeUnit: '='
       },
       controller: ['$scope', '$element', '$attrs', function ($scope, $element, $attrs) {
 
@@ -88,6 +92,14 @@ angular.module('timer', [])
           $scope.minutes = Math.floor((($scope.millis / (60000)) % 60));
           $scope.hours = Math.floor((($scope.millis / (3600000)) % 24));
           $scope.days = Math.floor((($scope.millis / (3600000)) / 24));
+
+          // plural - singular unit decision (old syntax, for backwards compatibility and English only, could be deprecated!)
+          $scope.secondsS = ($scope.seconds === 1) ? '' : 's';
+          $scope.minutesS = ($scope.minutes === 1) ? '' : 's';
+          $scope.hoursS = ($scope.hours === 1) ? '' : 's';
+          $scope.daysS = ($scope.days === 1)? '' : 's';
+          $scope.monthsS = ($scope.months === 1)? '' : 's';
+          $scope.yearsS = ($scope.years === 1)? '' : 's';
         
           $scope.sseconds = $scope.seconds < 10 ? '0' + $scope.seconds : $scope.seconds;
           $scope.mminutes = $scope.minutes < 10 ? '0' + $scope.minutes : $scope.minutes;
@@ -126,14 +138,15 @@ angular.module('timer', [])
             calculateTimeUnits();
             return;
           }
-          calculateTimeUnits();
-          if ($scope.countdown > 0) {
-            $scope.countdown--;
-          }
-          else if ($scope.countdown <= 0) {
+
+          if ($scope.millis < 0) {
             $scope.stop();
+            $scope.millis = 0;
+            calculateTimeUnits();
             return;
           }
+
+          calculateTimeUnits();
 
           //We are not using $timeout for a reason. Please read here - https://github.com/siddii/angular-timer/pull/5
           $scope.timeoutId = setTimeout(function () {
@@ -142,11 +155,13 @@ angular.module('timer', [])
           }, $scope.interval - adjustment);
 
           $scope.$emit('timer-tick', {timeoutId: $scope.timeoutId, millis: $scope.millis});
+
         };
 
         if ($scope.autoStart === undefined || $scope.autoStart === true) {
           $scope.start();
         }
+
       }]
     };
   }]);
