@@ -37,8 +37,10 @@
 
         <button class="btn btn-success" ng-click="startTimer()" ng-disabled="timerRunning">Start Timer</button>
         <button class="btn btn-danger" ng-click="stopTimer()" ng-disabled="!timerRunning">Stop Timer</button>
-
-        <h1><timer interval="1000" countdown="countdown" max-time-unit="'minute'" autostart="false">{{mminutes}}:{{sseconds}}</timer></h1>
+        
+        <div id="timer">
+          <h1><timer interval="1000" countdown="countdown" max-time-unit="'minute'" autostart="false">{{mminutes}}:{{sseconds}}</timer></h1>
+        </div>
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

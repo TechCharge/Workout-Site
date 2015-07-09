@@ -143,6 +143,9 @@ angular.module('timer', [])
             $scope.stop();
             $scope.millis = 0;
             calculateTimeUnits();
+            if($scope.finishCallback) {
+              $scope.$eval($scope.finishCallback);
+            }
             return;
           }
 
@@ -155,6 +158,16 @@ angular.module('timer', [])
           }, $scope.interval - adjustment);
 
           $scope.$emit('timer-tick', {timeoutId: $scope.timeoutId, millis: $scope.millis});
+
+          if ($scope.countdown > 0) {
+            $scope.countdown--;
+          }
+          else if ($scope.countdown <= 0) {
+            $scope.stop();
+            if($scope.finishCallback) {
+              $scope.$eval($scope.finishCallback);
+            }
+          }
 
         };
 

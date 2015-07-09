@@ -29,4 +29,13 @@ myApp.controller('myCtrl', function($scope,$timeout){
       $scope.$broadcast('timer-stop');
       $scope.timerRunning = false;
   };
+
+  $scope.callbackTimer={};
+  $scope.callbackTimer.status='Running';
+  $scope.callbackTimer.callbackCount=0;   
+  $scope.callbackTimer.finished=function(){
+      $scope.callbackTimer.status='Complete!';
+      $scope.callbackTimer.callbackCount++;
+      $scope.$apply();
+  };
 });

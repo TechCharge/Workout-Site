@@ -3,11 +3,10 @@
   margin: 1% 1% 1% 0;
 }
 
-.centerrow {
- /* margin: 0 auto;
-  max-width: 300px;*/
-}
-
 h1.page-header {
  margin-top: 20px;
+}
+
+#timer h1 {
+  font-size: 100px;
 }
