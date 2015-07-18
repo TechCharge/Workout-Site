@@ -30,12 +30,15 @@ myApp.controller('myCtrl', function($scope,$timeout){
       $scope.timerRunning = false;
   };
 
-  $scope.callbackTimer={};
-  $scope.callbackTimer.status='Running';
-  $scope.callbackTimer.callbackCount=0;   
-  $scope.callbackTimer.finished=function(){
-      $scope.callbackTimer.status='Complete!';
-      $scope.callbackTimer.callbackCount++;
-      $scope.$apply();
+  // Callback function
+  $scope.finished = function() {
+    $scope.play();
+    $scope.$apply();
+  };
+
+  // Plays selected audio file
+  var myAudio = new Audio('sounds/unlocked.m4a');
+  $scope.play = function(){
+    myAudio.play();
   };
 });

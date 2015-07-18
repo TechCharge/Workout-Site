@@ -39,7 +39,7 @@
         <button class="btn btn-danger" ng-click="stopTimer()" ng-disabled="!timerRunning">Stop Timer</button>
         
         <div id="timer">
-          <h1><timer interval="1000" countdown="countdown" max-time-unit="'minute'" autostart="false">{{mminutes}}:{{sseconds}}</timer></h1>
+          <h1><timer interval="1000" countdown="countdown" max-time-unit="'minute'" autostart="false" finish-callback="finished()">{{mminutes}}:{{sseconds}}</timer></h1>
         </div>
     </div>
 
