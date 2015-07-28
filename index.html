@@ -7,15 +7,15 @@
     <title>Workout Site</title>
     <link rel="icon" href="images/favicon.png" type="image/png">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="styles/custom.css">
 
-    <script data-require="angular.js@1.4.2" data-semver="1.4.2" src="https://code.angularjs.org/1.4.2/angular.js"></script>
-    <script src="scripts/app.js"></script>
-    <script src="scripts/timer.js"></script>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="scripts/app.min.js"></script>
+    <script src="scripts/timer.min.js"></script>
   </head>
-  
+
   <body>
     <div class="container" ng-app="myApp" ng-controller="myCtrl">
       <h1 class="page-header">Workout Timer</h1>
@@ -35,8 +35,8 @@
                 </div>
               </div>
           </div>
-          
-          <div class="form-group col-sm-6"> 
+
+          <div class="form-group col-sm-6">
             <h2>Set Interval</h2>
               <div class="row">
                 <div class="col-xs-6">
@@ -63,10 +63,8 @@
       </div>
     </div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   </body>
 
 </html>
