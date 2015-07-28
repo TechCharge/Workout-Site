@@ -5,9 +5,9 @@ myApp.controller('myCtrl', function($scope,$timeout,$interval){
   $scope.timerMinutesEntered = null;
   $scope.timerSecondsEntered = null;
   $scope.countdown = 0;
-  
+
   //TODO: Once timer hits 0, disable the stop button and stop the timer (i.e. call stopTimer())
-  //TODO: On callback, reset countdown to 0, reset clock to 00:00, and disable stop button (call stopTimer() possibly) 
+  //TODO: On callback, reset countdown to 0, reset clock to 00:00, and disable stop button (call stopTimer() possibly)
   //TODO: Disable minutes and seconds fields when the timer is started/counting down and enable them during stop, at
   // which time if the value of the fields are changed then set the countdown with the new values and start from there
   // in an approach similar to what is being done in startTimer()
@@ -20,7 +20,7 @@ myApp.controller('myCtrl', function($scope,$timeout,$interval){
     } else {
         $timeout(function(){
           $scope.$broadcast('timer-resume');
-        }); 
+        });
       }
       $scope.timerRunning = true;
   };
@@ -37,7 +37,7 @@ myApp.controller('myCtrl', function($scope,$timeout,$interval){
   };
 
   // Plays selected audio file
-  var myAudio = new Audio('sounds/Unlocked.m4a');
+  var myAudio = new Audio('sounds/unlocked.m4a');
   $scope.play = function(){
     myAudio.play();
 };

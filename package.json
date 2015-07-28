@@ -1,0 +1,32 @@
+{
+  "name": "workout-site",
+  "version": "1.0.0",
+  "description": "A site to use during a workout",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TechCharge/Workout-Site.git"
+  },
+  "keywords": [
+    "workout",
+    "timer",
+    "interval",
+    "app"
+  ],
+  "author": "Nick Roehl",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TechCharge/Workout-Site/issues"
+  },
+  "devDependencies": {
+    "angular": "^1.4.3",
+    "bootstrap": "^3.3.5",
+    "gulp": "^3.9.0",
+    "gulp-livereload": "^3.8.0",
+    "gulp-uglify": "^1.2.0",
+    "jquery": "^2.1.4"
+  }
+}
